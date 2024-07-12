@@ -6,25 +6,63 @@
     <title>Juego de Farmeo de Árboles</title>
     <style>
         /* Estilo general */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #87CEEB, #ffffff);
-            animation: backgroundAnimation 20s infinite alternate;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+      body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: slideDown 1s ease-out;
-        }
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(to bottom, #0d1b2a, #1b263b); }
+    100% { background: linear-gradient(to bottom, #1b263b, #415a77); }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes snowFall {
+    0% { transform: translateY(-10px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: snowFall 10s linear infinite;
+}
+
+@for $i from 1 through 100 {
+    .snowflake:nth-child(#{$i}) {
+        left: random(100) + vw;
+        width: random(5) + px;
+        height: random(5) + px;
+        animation-duration: random(10) + s;
+        animation-delay: random(10) + s;
+    }
+}
+
 
         h1, h2 {
             margin: 0.5em 0;
@@ -220,6 +258,7 @@ button:active {
     <header>
         <h1>Juego de Farmeo de Árboles</h1>
     </header>
+    <div id="snow-container"></div>
 
     <main>
         <section id="tutorial">
