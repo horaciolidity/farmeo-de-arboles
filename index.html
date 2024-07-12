@@ -6,6 +6,122 @@
     <title>Juego de Farmeo de Árboles</title>
 </head>
 <body>
+    <style>
+
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #87CEEB, #ffffff);
+    animation: backgroundAnimation 20s infinite alternate;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+h1, h2 {
+    margin: 0.5em 0;
+}
+
+main {
+    padding: 1em;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo del paisaje animado */
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(to bottom, #87CEEB, #ffffff); }
+    100% { background: linear-gradient(to bottom, #FFB6C1, #FFD700); }
+}
+
+#tutorial {
+    background-image: url('https://example.com/paisaje.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 0; }
+}
+
+/* Estilo de los árboles y elementos */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.5em 0;
+}
+
+label, select, input {
+    display: block;
+    margin: 0.5em 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilo específico para pantallas móviles */
+@media (max-width: 600px) {
+    main {
+        padding: 0.5em;
+    }
+
+    section {
+        margin: 0.5em 0;
+        padding: 0.5em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 0.3em 0.6em;
+    }
+}
+
+        
+    </style>
 
     <header>
         <h1>Juego de Farmeo de Árboles</h1>
