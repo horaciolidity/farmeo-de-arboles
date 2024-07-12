@@ -23,6 +23,7 @@
             text-align: center;
             padding: 1em 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideDown 1s ease-out;
         }
 
         h1, h2 {
@@ -35,6 +36,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: fadeIn 1s ease-in;
         }
 
         section {
@@ -46,6 +48,7 @@
             transform: perspective(1000px) rotateX(1deg);
             max-width: 800px;
             width: 100%;
+            animation: popUp 0.5s ease-in-out;
         }
 
         button {
@@ -56,7 +59,7 @@
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
         button:hover {
@@ -69,16 +72,31 @@
             100% { background: linear-gradient(to bottom, #FFB6C1, #FFD700); }
         }
 
-        #tutorial {
-            background-image: url('https://example.com/paisaje.jpg');
-            background-size: cover;
-            background-position: center;
-            animation: moveBackground 30s linear infinite;
+        @keyframes slideDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         @keyframes moveBackground {
             0% { background-position: 0 0; }
             100% { background-position: -1000px 0; }
+        }
+
+        #tutorial {
+            background-image: url('https://example.com/paisaje.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: moveBackground 30s linear infinite;
         }
 
         ul {
@@ -101,6 +119,12 @@
             background-color: #4CAF50;
             color: white;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
         }
 
         @media (max-width: 600px) {
@@ -199,16 +223,4 @@
 
     <script>
         document.getElementById('comprar-semilla').addEventListener('click', function() {
-            // Lógica de compra de semillas
-        });
-
-        document.getElementById('comprar-masetas').addEventListener('click', function() {
-            // Lógica de compra de masetas
-        });
-
-        document.getElementById('comprar-accesorio').addEventListener('click', function() {
-            // Lógica de compra de accesorios
-        });
-    </script>
-</body>
-</html>
+            // Lógica de compra
