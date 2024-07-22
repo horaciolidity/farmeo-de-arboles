@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function() {
+
+
 let web3;
 let account;
 
@@ -26,3 +29,19 @@ async function getBalance() {
     const balance = await contract.methods.balanceOf(account).call();
     document.getElementById('balance').innerText = 'Saldo: ' + web3.utils.fromWei(balance, 'ether') + ' WAVE';
 }
+
+   const menuItems = document.querySelectorAll(".menu-item");
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("data-target");
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const isVisible = targetElement.style.display === "block";
+                targetElement.style.display = isVisible ? "none" : "block";
+            }
+        });
+    });
+  });
