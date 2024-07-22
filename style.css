@@ -23,17 +23,22 @@ div, body, input, span, a {
 }
 
 body {
-    background-color: #1a1a1a; /* Fondo oscuro */
+    background-color: #0d0d0d; /* Fondo más oscuro */
     position: relative; /* Necesario para el posicionamiento de .pixelated */
     color: white;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
 }
 
 .pixelated {
     background: 
-        linear-gradient(45deg, #1a1a1a 25%, #333 25%, #333 50%, #1a1a1a 50%, #1a1a1a 75%, #333 75%, #333 100%),
-        linear-gradient(45deg, #1a1a1a 25%, #333 25%, #333 50%, #1a1a1a 50%, #1a1a1a 75%, #333 75%, #333 100%);
-    background-size: 40px 40px;
-    opacity: 0.1; /* Ajusta la opacidad para controlar el efecto de pixelado */
+        linear-gradient(45deg, #0d0d0d 25%, #1a1a1a 25%, #1a1a1a 50%, #0d0d0d 50%, #0d0d0d 75%, #1a1a1a 75%, #1a1a1a 100%),
+        linear-gradient(45deg, #0d0d0d 25%, #1a1a1a 25%, #1a1a1a 50%, #0d0d0d 50%, #0d0d0d 75%, #1a1a1a 75%, #1a1a1a 100%),
+        linear-gradient(90deg, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)),
+        linear-gradient(135deg, #ff00ff 25%, transparent 25%, transparent 50%, #ff00ff 50%, #ff00ff 75%, transparent 75%, transparent),
+        linear-gradient(135deg, #00ffff 25%, transparent 25%, transparent 50%, #00ffff 50%, #00ffff 75%, transparent 75%, transparent),
+        linear-gradient(225deg, #ff0000 25%, transparent 25%, transparent 50%, #ff0000 50%, #ff0000 75%, transparent 75%, transparent);
+    background-size: 40px 40px, 40px 40px, 100% 100%, 80px 80px, 80px 80px, 80px 80px;
+    opacity: 0.2; /* Ajusta la opacidad para controlar el efecto de pixelado */
     position: absolute;
     top: 0;
     right: 0;
