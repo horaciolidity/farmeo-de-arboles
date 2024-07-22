@@ -1,7 +1,56 @@
-html,body,div,span,a,img,ul,li,label,canvas,footer,header,menu{margin:0;padding:0;border:0;font-size:100%;font:inherit;font-family:poppins,Arial,Verdana,Geneva,sans-serif;vertical-align:baseline;}
-footer,header,menu,main,ul,li{display:block;box-sizing:border-box;}
-ul{list-style:none;}
-div,body,input,span,a{font-family:poppins,Arial,Verdana,Geneva,sans-serif;box-sizing:border-box;}
+html, body, div, span, a, img, ul, li, label, canvas, footer, header, menu {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: poppins, Arial, Verdana, Geneva, sans-serif;
+    vertical-align: baseline;
+}
+
+footer, header, menu, main, ul, li {
+    display: block;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+div, body, input, span, a {
+    font-family: poppins, Arial, Verdana, Geneva, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00, #ff3300);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    position: relative; /* Necesario para el posicionamiento de .pixelated */
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.pixelated {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEW3t7fTYc+GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAACklEQVQImWNgAAAAAgABSK+kcQAAAABJRU5ErkJggg==');
+    opacity: 0.05; /* Ajusta la opacidad para controlar el efecto de pixelado */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
 a{text-decoration:none;}
 a:visited{color:inherit;}
 :root{--content-width:1200px;--content-width-half:600px;--c-background:#05090B;--c-background-2:#3C4E5A;--c-background-3:#16242E;--c-background-4:#1D2F3B;--c-txt:#FFFFFF;--c-txt-2:#5C6D78;--c-txt-3:#030609;--c-txt-4:#90a2ab;--c-primary:#FFA500;--c-primary-50:#CCF66C7F;--c-primary-rgb:204, 246, 108;--c-primary-hover:#B9DE62;--c-secondary:#3C4E5A;--c-secondary-hover:#516471;--c-terciary:#4DD7DD;--c-terciary-50:#4DD7DD7F;--c-exit:#EE057B;--t-shadow-1:0 0 10px var(--c-primary);--t-shadow-2:0 0 20px var(--c-primary-50);--t-shadow-3:0 0 15px var(--c-primary);--t-shadow-terciary-1:0 0 20px var(--c-terciary-50);--r-border:16px;--r-border-2:8px;--r-border-3:20px;--r-border-4:15px;--card-box-shadow:0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);--popup-container-background:rgba(5, 9, 11, 0.7);--popup-shadow:0 0 40px rgba(5, 9, 11, 0.7);--popup-container-backdrop:blur(10px);}
