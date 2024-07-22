@@ -23,26 +23,17 @@ div, body, input, span, a {
 }
 
 body {
-    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00, #ff3300);
-    background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: white;
+    background-color: #1a1a1a; /* Fondo oscuro */
     position: relative; /* Necesario para el posicionamiento de .pixelated */
-}
-
-@keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    color: white;
 }
 
 .pixelated {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEW3t7fTYc+GAAAACXBIWXMAAAsTAAALEwEAmpwYAAAACklEQVQImWNgAAAAAgABSK+kcQAAAABJRU5ErkJggg==');
-    opacity: 0.05; /* Ajusta la opacidad para controlar el efecto de pixelado */
+    background: 
+        linear-gradient(45deg, #1a1a1a 25%, #333 25%, #333 50%, #1a1a1a 50%, #1a1a1a 75%, #333 75%, #333 100%),
+        linear-gradient(45deg, #1a1a1a 25%, #333 25%, #333 50%, #1a1a1a 50%, #1a1a1a 75%, #333 75%, #333 100%);
+    background-size: 40px 40px;
+    opacity: 0.1; /* Ajusta la opacidad para controlar el efecto de pixelado */
     position: absolute;
     top: 0;
     right: 0;
@@ -50,6 +41,7 @@ body {
     left: 0;
     z-index: 1;
 }
+
 
 a{text-decoration:none;}
 a:visited{color:inherit;}
