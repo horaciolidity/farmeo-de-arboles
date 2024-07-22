@@ -8,7 +8,7 @@ window.addEventListener('load', async () => {
             web3 = new Web3(window.ethereum);
             const accounts = await web3.eth.getAccounts();
             account = accounts[0];
-            document.getElementById('balance').innerText = 'Conectado: ' + account;
+            document.querySelector('.wallet-address').innerText = account;
             getBalance();
         } catch (error) {
             console.error("Error connecting to MetaMask:", error);
