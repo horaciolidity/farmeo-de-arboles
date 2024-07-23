@@ -548,18 +548,3 @@ main .background .firefly{display:none;}
 
 
 
-.buy-swamp {
-            display: none; /* Oculta el botón por defecto */
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            text-align: center;
-            background-color: #4CAF50; /* Color de fondo del botón */
-            color: white; /* Color del texto */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .hamburger {
-            cursor: pointer;
-        }
