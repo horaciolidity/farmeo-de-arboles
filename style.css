@@ -21,6 +21,13 @@ div, body, input, span, a {
     font-family: poppins, Arial, Verdana, Geneva, sans-serif;
     box-sizing: border-box;
 }
+/* Asegúrate de que el botón sea visible en pantallas pequeñas */
+@media (max-width: 768px) {
+    .buy-swamp {
+        display: block !important;
+    }
+}
+
 
 body {
     background-color: #0d0d0d; /* Fondo más oscuro */
