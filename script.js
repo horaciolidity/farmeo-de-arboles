@@ -50,4 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('MetaMask no está instalado. Por favor, instálalo para usar esta aplicación.');
         }
     });
+      const hamburger = document.querySelector('.hamburger');
+            const buySwamp = document.querySelector('.buy-swamp');
+
+            hamburger.addEventListener('click', function() {
+                // Alterna la visibilidad del botón Buy WAVE
+                if (buySwamp.style.display === 'none' || buySwamp.style.display === '') {
+                    buySwamp.style.display = 'block';
+                } else {
+                    buySwamp.style.display = 'none';
+                }
+            });
 });
