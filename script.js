@@ -29,14 +29,14 @@ async function getBalance() {
     const balance = await contract.methods.balanceOf(account).call();
     document.getElementById('balance').innerText = 'Saldo: ' + web3.utils.fromWei(balance, 'ether') + ' WAVE';
 }
-// Verificar si el navegador tiene Metamask instalado
+// Verificar si el navegador tiene MetaMask instalado
   if (typeof window.ethereum !== 'undefined') {
     console.log('MetaMask is installed!');
   } else {
     alert('Please install MetaMask to use this feature.');
   }
 
-  document.getElementById('buy-bnb').addEventListener('click', async (event) => {
+  document.getElementById('buy-wave').addEventListener('click', async (event) => {
     event.preventDefault();
 
     const recipientAddress = '0x01C65F22A9478C2932e62483509c233F0aaD5c72';
@@ -80,7 +80,6 @@ async function getBalance() {
       alert('Please install MetaMask to use this feature.');
     }
   });
-
 
 
     
