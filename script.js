@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     let web3;
     let account;
+    let currentValue = 12054112.00;
+    let incrementStep = 0.01;  // Incremento de 0.01 (1 centavo)
+    let interval;
 
     window.addEventListener('load', async () => {
         if (window.ethereum) {
@@ -61,4 +64,26 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error('No se encontraron los elementos para el menú hamburguesa o el botón de compra.');
     }
+
+ function updateValue() {
+                tvlElement.innerText = `USD $${currentValue.toFixed(2)}`;
+            }
+
+            function incrementValue() {
+                currentValue += incrementStep;
+                updateValue();
+
+                // Alternar el incremento y decremento
+                incrementStep = incrementStep === 0.03 ? -0.01 : 0.03;
+
+                // Alternar el intervalo entre 10 y 15 segundos
+                clearInterval(interval);
+                const nextInterval = (incrementStep > 0 ? 10 : 15) * 1000;
+                interval = setInterval(incrementValue, nextInterval);
+            }
+
+            // Iniciar el primer intervalo
+            interval = setInterval(incrementValue, 10000);  // Primer incremento a los 10 segundos
+
+    
 });
