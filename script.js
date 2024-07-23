@@ -11,10 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 account = accounts[0];
                 document.querySelector('.wallet-address').innerText = account;
 
-                // Seleccionar los elementos
+                // Seleccionar el botón usando su clase
                 const buyButton = document.querySelector('.buy-swamp');
-                const hamburger = document.querySelector('.hamburger');
-
                 if (buyButton) {
                     buyButton.classList.remove('hidden'); // Asegúrate de que el botón sea visible
 
@@ -45,19 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.error('El botón de Comprar WAVE no se encontró.');
                 }
 
-                if (hamburger) {
-                    hamburger.addEventListener('click', function() {
-                        // Alterna la visibilidad del botón Buy WAVE
-                        if (buyButton.style.display === 'none' || buyButton.style.display === '') {
-                            buyButton.style.display = 'block';
-                        } else {
-                            buyButton.style.display = 'none';
-                        }
-                    });
-                } else {
-                    console.error('El elemento hamburger no se encontró.');
-                }
-
             } catch (error) {
                 console.error("Error connecting to MetaMask:", error);
             }
@@ -65,4 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('MetaMask no está instalado. Por favor, instálalo para usar esta aplicación.');
         }
     });
+
+    // Funcionalidad del menú hamburguesa
+    const hamburger = document.querySelector('.hamburger');
+    const buySwamp = document.querySelector('.buy-swamp');
+
+    if (hamburger && buySwamp) {
+        hamburger.addEventListener('click', function() {
+            // Alterna la visibilidad del botón Buy WAVE
+            if (buySwamp.style.display === 'none' || buySwamp.style.display === '') {
+                buySwamp.style.display = 'block';
+            } else {
+                buySwamp.style.display = 'none';
+            }
+        });
+    } else {
+        console.error('No se encontraron los elementos para el menú hamburguesa o el botón de compra.');
+    }
 });
