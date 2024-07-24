@@ -547,4 +547,27 @@ main .background .firefly{display:none;}
 @font-face{font-family:poppins;font-style:normal;font-weight:600;src:url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.eot);src:local(''),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.eot#iefix) format('embedded-opentype'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.woff2) format('woff2'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.woff) format('woff'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.ttf) format('truetype'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.svg#Poppins) format('svg');}
 
 
-
+ @keyframes neon-flicker {
+            0%, 100% {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #ff00ff,
+                    0 0 30px #ff00ff,
+                    0 0 40px #ff00ff,
+                    0 0 50px #ff00ff,
+                    0 0 60px #ff00ff,
+                    0 0 70px #ff00ff;
+            }
+            50% {
+                text-shadow:
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #00ffff,
+                    0 0 30px #00ffff,
+                    0 0 40px #00ffff,
+                    0 0 50px #00ffff,
+                    0 0 60px #00ffff,
+                    0 0 70px #00ffff;
+            }
+        }
