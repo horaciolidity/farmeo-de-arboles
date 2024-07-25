@@ -90,4 +90,24 @@
 
             // Iniciar el primer intervalo
             interval = setInterval(incrementValue, 10000);  // Primer incremento a los 10 segundos
+
+  const current = document.querySelector('.custom-dropdown .current');
+            const dropdownList = document.querySelector('.custom-dropdown .dropdown-lst');
+
+            current.addEventListener('click', function () {
+                dropdownList.classList.toggle('show');
+                current.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.custom-dropdown')) {
+                    dropdownList.classList.remove('show');
+                    current.classList.remove('open');
+                }
+            });
+
+
+
+
+    
         });
