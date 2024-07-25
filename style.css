@@ -546,5 +546,84 @@ main .background .firefly{display:none;}
 @font-face{font-family:poppins;font-style:normal;font-weight:500;src:url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-500.eot);src:local(''),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-500.eot#iefix) format('embedded-opentype'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-500.woff2) format('woff2'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-500.woff) format('woff'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-500.ttf) format('truetype'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-500.svg#Poppins) format('svg');}
 @font-face{font-family:poppins;font-style:normal;font-weight:600;src:url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.eot);src:local(''),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.eot#iefix) format('embedded-opentype'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.woff2) format('woff2'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.woff) format('woff'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.ttf) format('truetype'),url(https://swamp.finance/static/frontend/fonts/poppins-v15-latin-ext_latin-600.svg#Poppins) format('svg');}
 
-
+ .network-options-bar {
+            display: flex;
+            align-items: center;
+            background-color: #2c2f33;
+            padding: 10px;
+            border-radius: 5px;
+            width: 300px;
+            margin: 20px auto;
+            color: white;
+        }
+        .network-options-bar .ttl {
+            margin-right: 10px;
+        }
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+        }
+        .custom-dropdown .current {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            cursor: pointer;
+            background-color: #23272a;
+            border-radius: 5px;
+        }
+        .custom-dropdown .current .icon {
+            width: 20px;
+            height: 20px;
+        }
+        .custom-dropdown .current .arrow {
+            width: 15px;
+            height: 15px;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+        }
+        .custom-dropdown .current.open .arrow {
+            transform: rotate(180deg);
+        }
+        .dropdown-lst {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #23272a;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .dropdown-lst a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-lst a:hover {
+            background-color: #3a3f44;
+        }
+        .dropdown-lst.show {
+            display: block;
+        }
+        .tvl .value {
+            font-size: 1.5em;
+            color: #39ff14; /* Neon green */
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neon {
+            from {
+                text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14, 0 0 50px #39ff14, 0 0 60px #39ff14, 0 0 70px #39ff14;
+            }
+            to {
+                text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14, 0 0 50px #39ff14, 0 0 60px #39ff14, 0 0 70px #39ff14, 0 0 80px #39ff14;
+            }
+        }
+        .wallet-address {
+            font-size: 0.8em;
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14, 0 0 20px #39ff14;
+        }
 
