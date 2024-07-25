@@ -220,21 +220,21 @@ main .content .title{display:flex;flex-direction:row;margin-top:100px;align-item
 main .content .title .ttl{color:var(--c-primary);font-size:36px;text-shadow:var(--t-shadow-2);}
 main .content .title .tvl{color:var(--c-primary);font-size:30px;text-shadow:var(--t-shadow-1);}
 main .content .app-version{--option-width:90px;}
-.app .network-options-bar{display:flex;flex-direction:row;margin:43px 0 34px;}
-.app .network-options-bar>.ttl{color:var(--c-txt-4);font-size:16px;line-height:50px;margin-right:14px;}
-.app .network-options-bar .network-dropdown{display:flex;position:relative;width:170px;height:50px;background-color:var(--c-background-4);border-radius:25px;margin-right:20px;transition:background-color .2s ease;cursor:pointer;flex-direction:row;}
-.app .network-options-bar .network-dropdown:hover{background-color:var(--c-background-2);}
-.app .network-options-bar .network-dropdown img.icon{position:relative;width:42px;height:42px;background-size:42px;background:0 0;outline:none;left:4px;top:4px;}
-.app .network-options-bar .network-dropdown .current{position:relative;display:flex;width:100%;flex-direction:row;}
-.app .network-options-bar .network-dropdown .current .ttl{margin-left:15px;font-size:14px;line-height:50px;}
-.app .network-options-bar .network-dropdown .current .arrow{position:absolute;width:17px;right:20px;top:20px;}
-.app .network-options-bar .network-dropdown .dropdown-lst{position:absolute;display:none;width:100%;top:calc(100% + 5px);left:0;border-radius:var(--r-border);background-color:var(--c-background-4);box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);pointer-events:none;}
-.app .network-options-bar .network-dropdown .dropdown-lst .itm{display:block;font-size:15px;padding:15px 24px;transition:background-color .2s ease;color:var(--c-txt);}
-.app .network-options-bar .network-dropdown .dropdown-lst .itm:first-of-type{border-radius:var(--r-border) 0 0 0;}
-.app .network-options-bar .network-dropdown .dropdown-lst .itm:last-of-type{border-radius:0 0 0 var(--r-border);}
-.app .network-options-bar .network-dropdown .dropdown-lst .itm:hover{background-color:var(--c-background-2);}
-.app .content .filters{display:flex;flex-direction:row;justify-content:space-between;}
-.app .content .filters .lbl{color:var(--c-txt-2);font-size:16px;}
+.network-options-bar{display:flex;flex-direction:row;margin:43px 0 34px;}
+ .network-options-bar>.ttl{color:var(--c-txt-4);font-size:16px;line-height:50px;margin-right:14px;}
+.network-options-bar .network-dropdown{display:flex;position:relative;width:170px;height:50px;background-color:var(--c-background-4);border-radius:25px;margin-right:20px;transition:background-color .2s ease;cursor:pointer;flex-direction:row;}
+.network-options-bar .network-dropdown:hover{background-color:var(--c-background-2);}
+.network-options-bar .network-dropdown img.icon{position:relative;width:42px;height:42px;background-size:42px;background:0 0;outline:none;left:4px;top:4px;}
+.network-options-bar .network-dropdown .current{position:relative;display:flex;width:100%;flex-direction:row;}
+.network-options-bar .network-dropdown .current .ttl{margin-left:15px;font-size:14px;line-height:50px;}
+.network-options-bar .network-dropdown .current .arrow{position:absolute;width:17px;right:20px;top:20px;}
+.network-options-bar .network-dropdown .dropdown-lst{position:absolute;display:none;width:100%;top:calc(100% + 5px);left:0;border-radius:var(--r-border);background-color:var(--c-background-4);box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);pointer-events:none;}
+.network-options-bar .network-dropdown .dropdown-lst .itm{display:block;font-size:15px;padding:15px 24px;transition:background-color .2s ease;color:var(--c-txt);}
+.network-options-bar .network-dropdown .dropdown-lst .itm:first-of-type{border-radius:var(--r-border) 0 0 0;}
+.network-options-bar .network-dropdown .dropdown-lst .itm:last-of-type{border-radius:0 0 0 var(--r-border);}
+.network-options-bar .network-dropdown .dropdown-lst .itm:hover{background-color:var(--c-background-2);}
+.content .filters{display:flex;flex-direction:row;justify-content:space-between;}
+.content .filters .lbl{color:var(--c-txt-2);font-size:16px;}
 .app .content .filters .zero-balance{justify-content:center;}
 .app .content .filters .zero-balance .checkbox-container{margin-top:45px;}
 .app .content .filters .filter.platform .dropdown{width:200px;margin-left:-25px;}
