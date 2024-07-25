@@ -1,4 +1,4 @@
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
             let web3;
             let account;
 
@@ -91,7 +91,7 @@
             // Iniciar el primer intervalo
             interval = setInterval(incrementValue, 10000);  // Primer incremento a los 10 segundos
 
-  const current = document.querySelector('.custom-dropdown .current');
+            const current = document.querySelector('.custom-dropdown .current');
             const dropdownList = document.querySelector('.custom-dropdown .dropdown-lst');
 
             current.addEventListener('click', function () {
@@ -105,9 +105,4 @@
                     current.classList.remove('open');
                 }
             });
-
-
-
-
-    
         });
