@@ -69,13 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentValue = 12054112.00;
     let incrementStep = 0.01;  // Incremento de 0.01 (1 centavo)
     let interval;
-    const tvlElement = document.querySelector('.tvl .value');
+    const tvlElement = document.querySelector('.tvl');
 
     function updateValue() {
         if (tvlElement) {
             tvlElement.innerText = `USD $${currentValue.toFixed(2)}`;
         } else {
-            console.error('No se encontró el elemento .tvl .value');
+            console.error('No se encontró el elemento .tvl');
         }
     }
 
@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Iniciar el primer intervalo
     interval = setInterval(incrementValue, 10000);  // Primer incremento a los 10 segundos
+
 
     const current = document.querySelector('.custom-dropdown .current');
     const dropdownList = document.querySelector('.custom-dropdown .dropdown-lst');
